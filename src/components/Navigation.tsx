@@ -40,7 +40,7 @@ export const Navigation = () => {
             className="font-display text-xl font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            VLP
+            VLS
           </motion.a>
 
           {/* Desktop Navigation */}

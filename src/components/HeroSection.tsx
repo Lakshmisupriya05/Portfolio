@@ -13,7 +13,7 @@ export const HeroSection = () => {
       const { clientX, clientY } = e;
       const centerX = window.innerWidth / 2;
       const centerY = window.innerHeight / 2;
-      
+
       const moveX = (clientX - centerX) / 50;
       const moveY = (clientY - centerY) / 50;
 
@@ -24,6 +24,7 @@ export const HeroSection = () => {
           duration: 0.5,
         });
       }
+
       if (blobRef2.current) {
         gsap.to(blobRef2.current, {
           x: -moveX * 1.5,
@@ -34,6 +35,7 @@ export const HeroSection = () => {
     };
 
     window.addEventListener('mousemove', handleMouseMove);
+
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
@@ -53,7 +55,9 @@ export const HeroSection = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: {
+        duration: 0.6,
+      },
     },
   };
 
@@ -67,11 +71,12 @@ export const HeroSection = () => {
         ref={blobRef1}
         className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl blob"
       />
+
       <div
         ref={blobRef2}
         className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-3xl blob"
       />
-      
+
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
@@ -86,7 +91,7 @@ export const HeroSection = () => {
           <motion.div variants={itemVariants} className="mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Available for work
+              Available for Internships . 2027 Graduate
             </span>
           </motion.div>
 
@@ -96,7 +101,9 @@ export const HeroSection = () => {
             className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
           >
             Hi, I'm{' '}
-            <span className="gradient-text">Vasala Lakshmi Supriya</span>
+            <span className="gradient-text">
+              Vasala Lakshmi Supriya
+            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -104,27 +111,27 @@ export const HeroSection = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            A passionate full-stack developer transforming ideas into high-quality digital 
-            products with clean design, powerful functionality, and excellent performance.
+            A passionate Software Engineering undergraduate building
+            scalable applications, exploring AI and cloud technologies,
+            and turning ideas into meaningful digital solutions.
           </motion.p>
 
-          {/* Stats */}
+          {/* Fresher highlights */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-8 mb-10"
+            className="flex flex-wrap justify-center gap-4 mb-10"
           >
-            {[
-              { value: '3+', label: 'Years Experience' },
-              { value: '20+', label: 'Projects Completed' },
-              { value: '5+', label: 'Happy Clients' },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold gradient-text">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+            <div className="px-5 py-3 rounded-full glass-card text-sm font-medium">
+              B.Tech IT Undergraduate
+            </div>
+
+            <div className="px-5 py-3 rounded-full glass-card text-sm font-medium">
+              Python Developer
+            </div>
+
+            <div className="px-5 py-3 rounded-full glass-card text-sm font-medium">
+              AI & Cloud Enthusiast
+            </div>
           </motion.div>
 
           {/* CTA Buttons */}
@@ -139,8 +146,9 @@ export const HeroSection = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5" />
-              Work with me
+              Let's Connect
             </motion.a>
+
             <motion.a
               href="#projects"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass-card font-semibold text-lg hover:border-primary/50 transition-all duration-300"
@@ -149,9 +157,11 @@ export const HeroSection = () => {
             >
               View Projects
             </motion.a>
+
             <motion.a
               href="/resume.pdf"
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-border hover:border-primary/50 font-medium transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -167,16 +177,25 @@ export const HeroSection = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.6 }}
+        transition={{
+          delay: 1.5,
+          duration: 0.6,
+        }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.a
           href="#about"
           className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
         >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <span className="text-xs uppercase tracking-widest">
+            Scroll
+          </span>
+
           <ArrowDown className="w-4 h-4" />
         </motion.a>
       </motion.div>

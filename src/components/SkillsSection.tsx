@@ -11,16 +11,14 @@ interface Skill {
 const skills: Skill[] = [
   // Frontend
   { name: 'React', level: 70, category: 'Frontend' },
-  { name: 'TypeScript', level: 70, category: 'Frontend' },
-  { name: 'Next.js', level: 70, category: 'Frontend' },
   { name: 'Tailwind CSS', level: 70, category: 'Frontend' },
   { name: 'JavaScript', level: 80, category: 'Frontend' },
   // Backend
   { name: 'Node.js', level: 80, category: 'Backend' },
   { name: 'Python', level: 80, category: 'Backend' },
-  { name: 'PostgreSQL', level: 80, category: 'Backend' },
-  { name: 'MongoDB', level: 80, category: 'Backend' },
-  { name: 'REST APIs', level: 80, category: 'Backend' },
+  { name: 'PostgreSQL', level: 60, category: 'Backend' },
+  { name: 'MongoDB', level: 60, category: 'Backend' },
+  { name: 'REST APIs', level: 70, category: 'Backend' },
   // Tools/AI
   { name: 'Git/GitHub', level: 90, category: 'Tools/AI' },
   { name: 'DS & Algo', level: 70, category: 'Backend' },
@@ -28,7 +26,6 @@ const skills: Skill[] = [
   // DevOps
   { name: 'Docker', level: 70, category: 'DevOps' },
   { name: 'AWS', level: 70, category: 'DevOps' },
-  { name: 'CI/CD', level: 70, category: 'DevOps' },
   { name: 'Linux', level: 70, category: 'DevOps' },
 ];
 
